@@ -1,0 +1,8 @@
+Usage:
+  kimquery [options]
+
+Description:
+  Command-line interface for retrieving data from OpenKIM.
+
+Options:
+  -h, --help        output help information

@@ -4,7 +4,7 @@
   "description": "Interface for obtaining data from OpenKIM",
   "main": "./lib/index.js",
   "bin": {
-    "kimquery": "./bin/kimquery.node.js"
+    "kimquery": "./bin/kimquery.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,10 @@
   "preferGlobal": true,
   "homepage": "https://github.com/streaver91/kimquery#readme",
   "dependencies": {
-    "needle": "^1.0.0"
+    "log": "^1.4.0",
+    "minimist": "^1.2.0",
+    "needle": "^1.0.0",
+    "prompt": "^1.0.0",
+    "underscore": "^1.8.3"
   }
 }
