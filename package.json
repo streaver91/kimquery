@@ -1,0 +1,26 @@
+{
+  "name": "kimquery",
+  "version": "0.0.1",
+  "description": "Interface for obtaining data from OpenKIM",
+  "main": "./lib/index.js",
+  "bin": {
+    "kimquery": "./bin/kimquery.node.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/streaver91/kimquery.git"
+  },
+  "author": "Junhao Li <streaver91@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/streaver91/kimquery/issues"
+  },
+  "preferGlobal": true,
+  "homepage": "https://github.com/streaver91/kimquery#readme",
+  "dependencies": {
+    "needle": "^1.0.0"
+  }
+}
