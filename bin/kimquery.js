@@ -5,7 +5,9 @@
 
 'use strict';
 
-// Use controller to handle command-line inputs
-var controller = require('../lib/controller.js');
+// Parse command-line inputs
 var argv = require('minimist')(process.argv.slice(2));
+
+// Process the inputs with controller
+var controller = require('../lib/controller.js');
 controller.process(argv);
