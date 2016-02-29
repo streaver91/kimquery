@@ -12,7 +12,7 @@ var log = new (require('log'))('debug');
   var common = {};
   
   // Configurations
-  common.conf = {
+  var common.conf = {
     HELP_FILE: 'help.txt',  // help information
     CACHE_FILE: 'cache.json',  // cache data from OpenKIM
     ERROR_SUFFIX: '\nYou can use \'kimquery -h\' to get help information.', 
@@ -20,25 +20,10 @@ var log = new (require('log'))('debug');
   };
   
   // Properties and structures
-  common.PROP_META = {
-    "vfe": {
-      "property-id": "tag:staff@noreply.openkim.org,2015-07-28:property/monovacancy-neutral-relaxed-formation-potential-energy-crystal-npt",
-      "test-driver": "VacancyFormationMigration",
-      "property-key": "relaxed-formation-potential-energy"
-    },
-    "vme": {
-      "property-id": "tag:staff@noreply.openkim.org,2015-09-16:property/monovacancy-neutral-migration-energy-crystal-npt",
-      "test-driver": "VacancyFormationMigration",
-      "property-key": "vacancy-migration-energy"
-    },
-    "vrv": {
-      "property-id": "tag:staff@noreply.openkim.org,2015-07-28:property/monovacancy-neutral-relaxation-volume-crystal-npt",
-      "test-driver": "VacancyFormationEnergyRelaxationVolume",
-      "property-key": "relaxation-volume"
-    },
+  var PROPS = ['vfe', 'vme', 'vrv', 'bulk', 'energy'];
+  var STRUCTS = ['fcc', 'bcc', 'sc', 'diamond', 'hcp'];
+  var PROP_META = {
   };
-  common.PROPS = Object.keys(PROP_META);
-  common.STRUCTS = ['fcc', 'bcc', 'sc', 'diamond', 'hcp'];
    
   // Colors for command-line output
   common.COLORS = colors;
