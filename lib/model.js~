@@ -4,7 +4,15 @@
 
 'use strict';
 
+var fs = require('fs');
+var path = require('path');
+var querystring = require('querystring');
+var needle = require('needle');
 var common = require('./common.js');
+
+querystring.escape = function(str) {
+  return str;  // No escape
+};
 
 var model = (function() {
   var _data = {};  // Cache temporary data
@@ -13,9 +21,14 @@ var model = (function() {
   var _elems = undefined;
   var _models = undefined;
   var _newest = false;  // Whether obtain newest and update cache
-  var _cache = path.join(__dirname, _config.CACHE_FILE);  // Cache file
+  var _cache = path.join(__dirname, _config.C.CACHE_FILE);  // Cache file
   
-  // Validate options and save to local variables
+  // Cache common.log to local scope
+  var _log = common.log;
+  
+  /** 
+   * Validate options and save to local variables
+   */
   var _init = function(options) {{
     // Process props
     (function(props) {
@@ -54,7 +67,7 @@ var model = (function() {
       elems = elems.split(',');
       elems.forEach(function(elem) {
         if(!/[A-Z][a-z]?/.test(elem)) {
-          throw new common.Error('Invalid elem: %s.', elem);
+          throw new common.Error('Invalid element: %s.', elem);
         }
       });
       _elems = elems;
@@ -73,7 +86,7 @@ var model = (function() {
         }
       });
       _models = models;
-    })(options.models.split(','));
+    })(options.models);
 
     // Process newest
     (function(newest) {
@@ -93,7 +106,44 @@ var model = (function() {
       _cache = cache;
     })(options.cache);
   };
+  
+  /**
+   * Get query according to the prop and struct specified
+   */
+  var _getQuery = function(prop, struct, meta, callback) {
+    var query = {
+      'meta.type': 'tr',
+      'property-id': meta['property-id'],
+      'meta.runner.kimcode': {
+        '$regex': '^' + meta['test-driver'] + '_' + struct,
+      },
+    };
+    var fields = {
+      'meta.model': 1,
+      'meta.runner.species': 1,
+      'host-short-name.source-value': 1,
+    };
+    fields[meta['value-key']] = 1;
+    fields[meta['uncert-key']] = 1;
+    var query = {
+      flat: 'on',
+      query: JSON.stringify(query),
+      limit: 0,
+      fields: JSON.stringify(fields),
+      database: 'data',
+    }
+    var url = _config.API_URL + '?' + querystring.stringify(query);
+    console.log('Retrieving %s of %s crystals...', prop, struct);
+    _log.debug('  URL: %s', url);
+    needle.get(url, _resHandler(prop, struct, meta, callback));
+  };
+  /**
+   * Update data and cache
+   */
+  var _update = function() {
 
+  };
+  
   var _get = function(options, dataHandler) {
     _readOpts(options);
     console.dir(options);

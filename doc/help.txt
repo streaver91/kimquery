@@ -6,3 +6,4 @@ Description:
 
 Options:
   -h, --help        output help information
+  -f                output format, currently support 'csv' and 'json'
