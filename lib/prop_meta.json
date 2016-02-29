@@ -1,0 +1,17 @@
+{
+  "vfe": {
+    "property-id": "tag:staff@noreply.openkim.org,2015-07-28:property/monovacancy-neutral-relaxed-formation-potential-energy-crystal-npt",
+    "test-driver": "VacancyFormationMigration",
+    "property-key": "relaxed-formation-potential-energy"
+  },
+  "vme": {
+    "property-id": "tag:staff@noreply.openkim.org,2015-09-16:property/monovacancy-neutral-migration-energy-crystal-npt",
+    "test-driver": "VacancyFormationMigration",
+    "property-key": "vacancy-migration-energy"
+  },
+  "vrv": {
+    "property-id": "tag:staff@noreply.openkim.org,2015-07-28:property/monovacancy-neutral-relaxation-volume-crystal-npt",
+    "test-driver": "VacancyFormationEnergyRelaxationVolume",
+    "property-key": "relaxation-volume"
+  }
+}
