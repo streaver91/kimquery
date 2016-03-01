@@ -6,15 +6,15 @@ Description:
 
 Options:
   -h, --help            output help information
-  -f, --format [arg]    output format, currently support 'csv' and 'json'
+  -f, --format          output format, currently support 'csv' and 'json'
   -u, --update          update cache
-  -p, --props [args]    specify properties needed, separated by ','
+  -p, --props           specify properties needed, separated by ','
                         support regular expressions
                         use '-p list' to show supported properties
                         check prop_meta.json for the definition of the listed items
                         modify prop_meta.json to support more properties
-  -s, --structs [args]  specify structures needed, separated by ','
+  -s, --structs         specify structures needed, separated by ','
                         use '-s list' to show supported structures
-  -e, --elems [args]    specify elements needed, separated by ','
-  -m, --models [args]   specify models needed, separated by ','
+  -e, --elems           specify elements needed, separated by ','
+  -m, --models          specify models needed, separated by ','
                         support regular expressions
