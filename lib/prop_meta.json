@@ -13,5 +13,18 @@
     "property-id": "tag:staff@noreply.openkim.org,2015-07-28:property/monovacancy-neutral-relaxation-volume-crystal-npt",
     "test-driver": "VacancyFormationEnergyRelaxationVolume",
     "property-key": "relaxation-volume"
+  },
+  "bulk-cubic": {
+    "property-id": "tag:staff@noreply.openkim.org,2014-04-15:property/bulk-modulus-isothermal-cubic-crystal-npt",
+    "test-driver": "ElasticConstantsCubic",
+    "property-key": "isothermal-bulk-modulus",
+    "structures": "sc,fcc,bcc,diamond"
+  },
+  "bulk-hexagonal": {
+    "property-id": "tag:staff@noreply.openkim.org,2014-04-15:property/bulk-modulus-isothermal-hexagonal-crystal-npt",
+    "test-driver": "ElasticConstantsHexagonal",
+    "property-key": "isothermal-bulk-modulus",
+    "structures": "hcp"
   }
+  
 }
