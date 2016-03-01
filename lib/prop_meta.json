@@ -25,6 +25,17 @@
     "test-driver": "ElasticConstantsHexagonal",
     "property-key": "isothermal-bulk-modulus",
     "structures": "hcp"
+  },
+  "energy-cubic": {
+    "property-id": "tag:staff@noreply.openkim.org,2014-04-15:property/cohesive-free-energy-cubic-crystal",
+    "test-driver": "LatticeConstantCubicEnergy",
+    "property-key": "cohesive-free-energy",
+    "structures": "sc,fcc,bcc,diamond"
+  },
+  "energy-hexagonal": {
+    "property-id": "tag:staff@noreply.openkim.org,2014-04-15:property/cohesive-free-energy-hexagonal-crystal",
+    "test-driver": "LatticeConstantHexagonalEnergy",
+    "property-key": "cohesive-free-energy",
+    "structures": "hcp"
   }
-  
 }
