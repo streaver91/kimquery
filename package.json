@@ -1,6 +1,6 @@
 {
   "name": "kimquery",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Interface for obtaining data from OpenKIM",
   "main": "./lib/index.js",
   "bin": {
